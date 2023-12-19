@@ -1,0 +1,76 @@
+block variables
+	- var title = 'CSGO rating'
+	-
+		var menu = {
+			'Команда': "#",
+			'Топ 50': "#",
+			'Новости': "#"
+		}
+
+		var list1 ={
+			'header': 'NAVI',
+			'text': 'Подразделение украинской мультигейминговой киберспортивной организации Natus Vincere по игре Dota 2 (первоначально DotA Allstars) основано в 2010 году. Команда является одной из самых титулованных и успешных в истории соревновательной Dota 2. Na’Vi являются чемпионами престижнейшего мирового турнира The International'
+		}
+		
+		var list2 ={
+			'header': 'Vitality',
+			'text': 'Team Vitality — французская киберспортивная организация, основанная в августе 2013 года Фабьеном Девайдом и Николя Морером. Также у них есть несколько профессиональных команд и создателей контента со всей Европы и Индии[1][2]. В апреле 2021 года Team Vitality объединились с французским футбольным клубом ФК Страсбург, чтобы создать команду по FIFA eLigue 1'
+		}
+
+		var list3 ={
+			'header': 'FAZE',
+			'text': 'FaZe Clan (ранее FaZe Shipping) — профессиональная североамериканская киберспортивная и развлекательная организация со штаб-квартирой в Лос-Анджелесе, США. Основана 30 мая 2010 года. Команды FaZe Clan регулярно участвуют в турнирах по Call of Duty, Counter-Strike: Global Offensive, PUBG, Tom Clancys Rainbow Six Siege, FIFA, Fortnite, FIFA Online.'
+		}
+
+mixin Menunav(menu)
+		each value, key in menu
+			if active == key
+				a.active(href= value)= key 
+			else 
+				a(href= value)= key
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		title #{title}
+		link(rel="stylesheet", href="css/main.css")
+
+	body
+		div.header
+			h1(id="optik")= title
+			div.navigation
+				a.black(href="#") Главная
+				+Menunav(menu)
+		article 
+			section.images
+				img(src= "img/ENCE.png")
+				img.block(src= "img/фото1.jpg")
+				img(src= "img/G2.jpg")
+
+			section.list1
+				div.list1-text
+					h2= list1.header 
+					p= list1.text
+				div.list1-picture
+					img(src = "img/NAVI.png")
+		
+			section.list2
+				div.list2-text
+					h2= list2.header  
+					p= list2.text
+					
+		
+			section.list3
+				div.list3-picture
+					img(src = "img/FaZe.png")
+				div.list3-text
+					h2= list3.header 
+					p= list3.text
+
+		div.footer
+			p &© Охлопков А.И., Б9121-04.03.09/6, 2023-2024
+			a(href="#") &#9993 Контакты
+
+		script(src="js/jquery-3.5.1.min.js")
+		script(src="js/main.js")

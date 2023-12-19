@@ -1,0 +1,156 @@
+col = lightgray
+col1 = grey 
+gap = 90%
+gap1 = 100%
+
+body
+  margin 0px auto
+
+.header
+  display flex
+  flex-direction row
+  width gap
+  height 163px
+  margin 0px auto
+  h1
+    width 34%
+    background-color col
+    margin-bottom 0px
+
+#optik
+  padding-left 8%
+  padding-top 40px
+
+.navigation
+  width 68%
+  display flex
+  align-self flex-end
+  background-color col
+  justify-content flex-end
+  .black
+    background-color black
+    margin-left 13%
+    height 40px
+  a
+    margin-right 1.8%
+    margin-top 2.7%
+    background-color col1
+    width 80%
+    height 30px
+    padding 10px
+    font-size 2vw
+    text-align left
+    color white
+    text-decoration none
+
+style-p(size1, size2, size3)
+  margin-top size1
+  margin-left size2
+  margin-right size2
+  margin-bottom size3
+
+article
+  & .images
+    display flex
+    width gap
+    margin 0px auto
+    img 
+      width 33.33%
+      height 260px
+      margin 1px
+    .block
+      style-p(7px, 1px, 25px)
+
+article
+  & .list1
+    display flex
+    width 80%
+    margin 0px auto
+    .list1-text
+      text-align justify
+      h2
+        text-align center
+    .list1-picture
+      img
+        width 300px
+        height 140px
+
+article
+  & .list2
+    display flex
+    width 80%
+    margin 0px auto
+    .list2-text
+      text-align justify
+      h2
+        text-align center
+article
+  & .list3
+    display flex
+    width 80%
+    margin 0px auto
+    margin-top 35px
+    margin-bottom 35px
+    .list3-picture
+      img
+        width 300px
+        height 140px
+    .list3-text
+      text-align justify
+      h2
+        text-align center
+
+.footer
+	display flex
+	padding 5px
+  height @padding
+	background-color grey
+	text-align left
+	justify-content space-between
+
+
+
+@media (max-width: 700px)
+  .header
+    justify-content space-evenly
+    flex-direction column
+    h1
+      background-color white
+
+
+  #optik
+    margin 0 auto
+  
+  .navigation
+    width gap1
+    justify-content space-evenly
+    flex-basis gap1
+    flex-wrap wrap
+    height 141.5px
+    padding-bottom 10px
+    a
+      width 30%
+      font-size 35px
+    .black  
+      background-color grey
+      height 30px
+      margin-left 0
+  
+  article
+    & .images
+      flex-direction column
+      margin-top 44px
+      img
+        width gap1
+  article
+    & .list1
+      flex-direction column
+      .list1-picture
+        img
+          width gap1
+  article
+    & .list3
+      flex-direction: column;
+      .list3-picture
+        img
+          width gap1
